@@ -1,0 +1,22 @@
+{
+  "name": "gmbit/cebanner",
+  "description": "Simple TYPO3 banner content element",
+  "type": "typo3-cms-extension",
+  "version": "1.0.4",
+  "license": [
+    "GPL-2.0-or-later"
+  ],
+  "require": {
+    "typo3/cms-core": "^13.4"
+  },
+  "autoload": {
+    "psr-4": {
+      "Gmbit\\CeBanner\\": "Classes/"
+    }
+  },
+  "extra": {
+    "typo3/cms": {
+      "extension-key": "cebanner"
+    }
+  }
+}

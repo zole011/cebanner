@@ -1,0 +1,14 @@
+tt_content.cebanner_banner =< lib.contentElement
+tt_content.cebanner_banner {
+    templateName = Show
+    dataProcessing {
+        10 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+        10 {
+            references {
+                table = tt_content
+                fieldName = image
+            }
+            as = files
+        }
+    }
+}
