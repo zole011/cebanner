@@ -2,12 +2,17 @@
 defined('TYPO3') or die();
 
 \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
-    'cebanner',  // Ključ ekstenzije, mora biti u formatu "Vendor.Extension"
-    'Banner',           // Plugin naziv koji će se koristiti u backendu
+    'Cebanner',
+    'Banner',
     [
-        'Banner' => 'show', // Kontroler i akcija koja se koristi za prikaz
+        \Gmbit\Cebanner\Controller\BannerController::class => 'show',
     ],
-    [
-        // Ako imaš neka specifična opcionalna akciona dugmad, ovde ih možeš dodati
-    ]
+    [],
+    \TYPO3\CMS\Extbase\Utility\ExtensionUtility::PLUGIN_TYPE_CONTENT_ELEMENT
+);
+
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPlugin(
+    ['Banner', 'cebanner_banner', 'EXT:cebanner/Resources/Public/Icons/Extension.svg'],
+    'CType',
+    'cebanner'
 );

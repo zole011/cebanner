@@ -2,7 +2,7 @@
   "name": "gmbit/cebanner",
   "description": "Simple TYPO3 banner content element",
   "type": "typo3-cms-extension",
-  "version": "1.0.4",
+  "version": "1.0.1",
   "license": [
     "GPL-2.0-or-later"
   ],

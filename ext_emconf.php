@@ -1,16 +1,18 @@
 <?php
-
 $EM_CONF[$_EXTKEY] = [
-    'title' => 'Content Element: Banner',
-    'description' => 'Simple banner content element.',
-    'category' => 'fe',
-    'author' => 'Your Name',
-    'author_email' => 'your@email.com',
+    'title' => 'CE Banner',
+    'description' => 'Simple TYPO3 banner content element.',
+    'category' => 'plugin',
+    'author' => 'Gmbit',
+    'author_email' => 'info@gmbit.rs',
     'state' => 'stable',
-    'version' => '1.0.0',
+    'clearCacheOnLoad' => true,
+    'version' => '1.0.1',
     'constraints' => [
         'depends' => [
-            'typo3' => '13.0.0-13.9.99',
+            'typo3' => '13.4.0-13.99.99',
         ],
+        'conflicts' => [],
+        'suggests' => [],
     ],
 ];
