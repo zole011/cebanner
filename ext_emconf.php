@@ -1,18 +1,15 @@
 <?php
 $EM_CONF[$_EXTKEY] = [
-    'title' => 'CE Banner',
-    'description' => 'Simple TYPO3 banner content element.',
-    'category' => 'plugin',
-    'author' => 'Gmbit',
-    'author_email' => 'info@gmbit.rs',
-    'state' => 'stable',
-    'clearCacheOnLoad' => true,
-    'version' => '1.0.1',
+    'title' => 'cebanner',
+    'description' => 'this is a test extension',
     'constraints' => [
         'depends' => [
-            'typo3' => '13.4.0-13.99.99',
+            'typo3' => '13.0.0-13.4.99',
         ],
-        'conflicts' => [],
-        'suggests' => [],
+    ],
+    'autoload' => [
+        'psr-4' => [
+            'Gmbit\\Cebanner\\' => 'Classes/',
+        ],
     ],
 ];

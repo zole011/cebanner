@@ -1,5 +1,10 @@
-tt_content.cebanner_banner =< lib.contentElement
-tt_content.cebanner_banner {
-    templateName = Banner
-    stdWrap.debug = 1
+plugin.tx_cebanner {
+    view {
+        templateRootPaths.0 = EXT:cebanner/Resources/Private/Templates/
+        partialRootPaths.0 = EXT:cebanner/Resources/Private/Partials/
+        layoutRootPaths.0 = EXT:cebanner/Resources/Private/Layouts/
+    }
+    settings {
+        # Add any settings here if needed
+    }
 }

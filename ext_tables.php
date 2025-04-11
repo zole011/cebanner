@@ -1,8 +1,10 @@
 <?php
+
 defined('TYPO3') or die();
 
+// Dodavanje TypoScript konfiguracije kroz Static Include
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile(
-    'cebanner',    // Naziv tvoje ekstenzije
-    'Configuration/TypoScript',  // Putanja do TypoScript foldera
-    'CE Banner'        // Naziv koji se pojavljuje u Backend-u
+    'cebanner',
+    'Configuration/TypoScript',
+    'Cebanner Plugin Configuration'
 );

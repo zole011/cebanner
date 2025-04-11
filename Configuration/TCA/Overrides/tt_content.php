@@ -1,34 +1,24 @@
 <?php
+
 defined('TYPO3') or die();
 
-use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
-
-// Dodaj novi CType u backend
-ExtensionManagementUtility::addTcaSelectItem(
-    'tt_content',
-    'CType',      // polje
+// Dodavanje novog content elementa za plugin
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPlugin(
     [
-        'Banner', // Label prikazan u backendu
-        'cebanner_banner', // Vrednost CType-a
-        'content-image', // Ikonica (možeš kasnije promeniti)
+        'CeBanner Plugin', // Naziv koji će biti prikazan u backendu
+        'cebanner_banner',  // Unikatni ključ za plugin (extension_key + plugin_name)
+        'EXT:cebanner/Resources/Public/Icons/user_plugin_hellome.svg' // Ikonica plugin-a (opciono)
     ],
-    'textmedia', // Gde da ubaci (posle 'textmedia')
-    'after'
+    'list_type',
+    'cebanner' // Ključ ekstenzije
 );
 
-// Definiši polja koja želiš da vidiš u formi
-$GLOBALS['TCA']['tt_content']['types']['cebanner_banner'] = [
-    'showitem' => '
-        --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.general;general,
-        header,
-        subheader,
-        bodytext,
-        image,
-        --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.appearance,
-        --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.frames;frames,
-        --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access,
-        --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.visibility;visibility,
-        --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:palette.access;access,
-        --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.extended
-    ',
-];
+// Konfiguracija prikaza plugina u backendu
+$GLOBALS['TCA']['tt_content']['types']['list']['subtypes_excludelist']['cebanner_banner'] = 'layout,select_key,pages';
+$GLOBALS['TCA']['tt_content']['types']['list']['subtypes_addlist']['cebanner_banner'] = 'pi_flexform';
+
+// Ako želiš da koristiš Flexform, možeš ga registrovati ovako (opciono):
+// \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPiFlexFormValue(
+//     'hellome_hello',
+//     'FILE:EXT:hellome/Configuration/FlexForms/flexform_hellome.xml'
+// );
