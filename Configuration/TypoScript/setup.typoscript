@@ -1,4 +1,5 @@
 tt_content.cebanner_banner =< lib.contentElement
 tt_content.cebanner_banner {
     templateName = Banner
+    stdWrap.debug = 1
 }
