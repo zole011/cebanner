@@ -1,18 +1,14 @@
 <?php
 defined('TYPO3') or die();
 
-\TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
-    'Cebanner',
-    'Banner',
-    [
-        \Gmbit\Cebanner\Controller\BannerController::class => 'show',
-    ],
-    [],
-    \TYPO3\CMS\Extbase\Utility\ExtensionUtility::PLUGIN_TYPE_CONTENT_ELEMENT
-);
-
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPlugin(
-    ['Banner', 'cebanner_banner', 'EXT:cebanner/Resources/Public/Icons/Extension.svg'],
-    'CType',
-    'cebanner'
-);
+call_user_func(function () {
+    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPlugin(
+        [
+            'CE Banner', // Naslov koji ćeš videti u backendu
+            'cebanner_banner', // CType vrednost, mora da se poklapa sa TypoScript-om i TCA
+            'content-textpic' // Opcionalno ikonica, možeš staviti i custom kasnije
+        ],
+        'CType',
+        'cebanner' // ključ tvoje ekstenzije, sve malim slovima
+    );
+});
